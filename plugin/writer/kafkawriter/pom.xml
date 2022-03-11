@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>com.wgzhao.addax</groupId>
         <artifactId>addax-all</artifactId>
@@ -8,12 +8,12 @@
         <relativePath>../../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>hbase11xwriter</artifactId>
-    <name>hbase11x-writer</name>
+    <artifactId>kafkawriter</artifactId>
+    <name>kafka-writer</name>
+    <description>writer data to kafka topic</description>
     <packaging>jar</packaging>
 
     <dependencies>
-
         <dependency>
             <groupId>com.wgzhao.addax</groupId>
             <artifactId>addax-common</artifactId>
@@ -27,37 +27,22 @@
         </dependency>
 
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>kryo</artifactId>
+            <version>5.3.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-common</artifactId>
-            <version>${hadoop.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.hbase</groupId>
-            <artifactId>hbase-client</artifactId>
-            <version>${hbase1.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>jdk.tools</artifactId>
-                    <groupId>jdk.tools</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.hbase</groupId>
-            <artifactId>hbase-common</artifactId>
-            <version>${hbase1.version}</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>ch.qos.logback</groupId>-->
+        <!--            <artifactId>logback-classic</artifactId>-->
+        <!--        </dependency>-->
 
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
